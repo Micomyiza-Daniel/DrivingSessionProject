@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #181818;
+    color: #FFF;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.left__section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* SIGN IN STYLING */
+
+.form__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding-bottom: 1rem;
+}
+
+.form__section form {
+    width: 80%;
+    padding-bottom: 3rem;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.logo {
+    margin-bottom: 8vh;
+}
+
+.form__section label {
+    font-size: 0.9rem;
+    line-height: 2rem;
+}
+
+form .text__input {
+    margin-bottom: 1.3rem;
+    width: 100%;
+    border-radius: 2px;
+    background: #181818;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 0.5rem 1rem;
+    line-height: 1.3rem;
+}
+
+.form__section .primary__button {
+    width: 100%;
+}
+
+.form__section2,
+.seperator
+ {
+    width: 60%;
+}
+
+.form__section2 a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.seperator {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.2rem;
+    align-items: center;
+}
+
+.bar {
+    flex: auto;
+    border: none;
+    height: 1px;
+    background: #aaa;
+}
+
+.seperator span {
+    color: #ccc;
+    padding: 0 0.8rem;
+}
+/* Right Section Styling */
+
+.right__section {
+    background: url(./image/signup.jpg) no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    height: 100vh;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    width: 100;
+}
+
+.hero .secondary__button {
+    width: 60%;
+    margin: auto;
+}
+/* Footer Styling */
+
+#main__footer {
+    color: #ccc;
+    text-align: center;
+    font-size: 0.8rem;
+    max-width: 80%;
+    padding-top: 2.1em;
+}
+
+#main__footer a {
+    color: #f96816;
+    text-decoration: underline;
+}
+
+/* Button */
+
+.primary__button {
+    padding: 0.7rem 1rem;
+    height: 2.7rem;
+    display: block;
+    border: 0;
+    border-radius: 2px;
+    background-color: #f96816;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.primary__button:hover {
+    background-color: #ff7b39;
+}
+
+.secondary__button {
+    padding: 0.7rem 1rem;
+    height: 2.7rem;
+    display: block;
+    border: 1px solid #f4f4f4;
+    border-radius: 2px;
+    background: none;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.secondary__button:hover {
+    border-color: #ff7b39;
+    color: #ff7b39;
+
+}
+
+
+/* media queries */
+
+@media(min-width: 1200px) {
+
+    .left__section {
+        flex: 4;
+    }
+
+    .right__section {
+        flex: 6;
+    }
+}
+
+@media(max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+
+
+    .right__section {
+        display: none;
+    }
+
+    .left__section {
+        justify-content: flex-start;
+        margin-top: 4vh;
+    }
+
+    .logo {
+        margin-bottom: 2vh;
+    }
+
+    .form__section .text__input {
+        margin-bottom: 0.7rem;
+    }
+
+    #main__footer {
+        padding-top: 2rem;
+    }
+}

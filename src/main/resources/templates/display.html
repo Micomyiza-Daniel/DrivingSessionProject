@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/ok.css">
+  <title>Dispaly page</title>
+
+  <style>
+    body{
+      margin:0;
+      padding:20px;
+      font-family: sans-serif;
+      /*background-image: url(image/cup-coffee-with-pile-coffee-beans.jpg) ;*/
+      background: rgba(0, 254, 195, 0.45);
+    }
+
+    *{
+      box-sizing: border-box;
+    }
+
+    .table{
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table td,.table th{
+      padding:12px 15px;
+      border:1px solid #ddd;
+      text-align: center;
+      font-size:16px;
+    }
+
+    .table th{
+      background-color: white;
+      /*background: url(image/cup-coffee-with-pile-coffee-beans2.jpg) no-repeat;*/
+      color:black;
+    }
+
+    .table tbody tr:nth-child(even){
+      background-color: #f5f5f5;
+    }
+
+    /*responsive*/
+
+    @media(max-width: 500px){
+      .table thead{
+        display: none;
+      }
+
+      .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+      }
+      .table tr{
+        margin-bottom:15px;
+      }
+      .table td{
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+      }
+      .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left:0;
+        width: 50%;
+        padding-left:15px;
+        font-size:15px;
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>surname</th>
+    <th>email</th>
+    <th>username</th>
+    <th>password</th>
+    <th>Action</th>
+
+
+  </tr><br>
+  </thead>
+  <tbody>
+  <th:block th:each="registerDriver: ${ListOfUsers}">
+    <tr>
+
+      <td th:text="${registerDriver.id}"></td>
+      <td th:text="${registerDriver.surname}"></td>
+      <td th:text="${registerDriver.email}"></td>
+      <td th:text="${registerDriver.username}"></td>
+      <td th:text="${registerDriver.password}"></td>
+
+
+      <td>
+
+        <a th:href="@{/updateUser/{id}(id=${registerDriver.id})}"> Update </a>
+        <a th:href="@{/deleteUser/{id}(id=${registerDriver.id})}"> Delete </a>
+
+      </td>
+
+    </tr>
+
+
+  </th:block>
+  </tbody>
+</table>
+</body>
+
+</html>
